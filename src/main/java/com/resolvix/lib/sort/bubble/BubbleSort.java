@@ -13,16 +13,13 @@ public class BubbleSort {
     public static <T> void sort(T[] ts, Comparator<T> c) {
         boolean finished = false;
         int i_max = ts.length;
-        while (!finished) {
-            finished = true;
-            for (int i = 0; i < i_max - 1; i++)
-                if (c.compare(ts[i], ts[i+1]) > 0) {
+        for (int i = 0; i < i_max - 1; i++)
+            for (int j = i + 1; j < i_max; j++)
+                if (c.compare(ts[i], ts[j]) > 0) {
                     T scratchT = ts[i];
-                    ts[i] = ts[i+1];
-                    ts[i+1] = scratchT;
-                    finished = false;
+                    ts[i] = ts[j];
+                    ts[j] = scratchT;
                 }
-        }
     }
 
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
