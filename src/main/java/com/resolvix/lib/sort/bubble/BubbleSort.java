@@ -1,5 +1,7 @@
 package com.resolvix.lib.sort.bubble;
 
+import com.resolvix.lib.sort.api.SortAlgorithm;
+
 import java.lang.reflect.Array;
 import java.util.Comparator;
 import java.util.List;
@@ -8,9 +10,11 @@ import java.util.ListIterator;
 /**
  *  Provides generic implementations of the BubbleSort algorithm
  */
-public class BubbleSort {
+public class BubbleSort
+    implements SortAlgorithm
+{
 
-    public static <T> void sort(T[] ts, Comparator<T> c) {
+    public <T> void sort(T[] ts, Comparator<T> c) {
         boolean finished = false;
         int i_max = ts.length;
         for (int i = 0; i < i_max - 1; i++)
@@ -22,11 +26,7 @@ public class BubbleSort {
                 }
     }
 
-    public static <T extends Comparable<? super T>> void sort(List<T> list) {
-        throw new UnsupportedOperationException();
-    }
-
-    public static <T> void sort(List<T> list, Comparator<? super T> c) {
+    public <T> void sort(List<T> list, Comparator<? super T> c) {
         @SuppressWarnings("unchecked")
         T[] ts = (T[]) list.toArray();
         sort(ts, c);
@@ -35,5 +35,9 @@ public class BubbleSort {
             i.next();
             i.set(t);
         }
+    }
+
+    public <T extends Comparable<? super T>> void sort(List<T> list) {
+        sort(list, T::compareTo);
     }
 }
