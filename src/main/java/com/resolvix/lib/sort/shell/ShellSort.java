@@ -1,16 +1,20 @@
 package com.resolvix.lib.sort.shell;
 
+import com.resolvix.lib.sort.api.SortAlgorithm;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class ShellSort {
+public class ShellSort
+    implements SortAlgorithm
+{
 
-    private static <T> int[] getGapSequence(T[] ts) {
+    private <T> int[] getGapSequence(T[] ts) {
         return new int[] { 5, 2, 1 };
     }
 
-    public static <T> void sort(T[] ts, Comparator<T> c) {
+    public <T> void sort(T[] ts, Comparator<T> c) {
         int[] gapSequence = getGapSequence(ts);
         for (int gap : gapSequence) {
             int i_max = ts.length;
@@ -25,11 +29,7 @@ public class ShellSort {
         }
     }
 
-    public static <T extends Comparable<? super T>> void sort(List<T> list) {
-        throw new UnsupportedOperationException();
-    }
-
-    public static <T> void sort(List<T> list, Comparator<? super T> c) {
+    public <T> void sort(List<T> list, Comparator<? super T> c) {
         @SuppressWarnings("unchecked")
         T[] ts = (T[]) list.toArray();
         sort(ts, c);
@@ -38,5 +38,9 @@ public class ShellSort {
             i.next();
             i.set(t);
         }
+    }
+
+    public <T extends Comparable<? super T>> void sort(List<T> list) {
+        sort(list, T::compareTo);
     }
 }
