@@ -14,7 +14,7 @@ public class BubbleSort
     implements SortAlgorithm
 {
 
-    public <T> void sort(T[] ts, Comparator<T> c) {
+    public <T> void sort(T[] ts, Comparator<? super T> c) {
         boolean finished = false;
         int i_max = ts.length;
         for (int i = 0; i < i_max - 1; i++)

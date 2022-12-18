@@ -10,7 +10,7 @@ public class ShellSort
     implements SortAlgorithm
 {
 
-    public <T> void sort(T[] ts, Comparator<T> c) {
+    public <T> void sort(T[] ts, Comparator<? super T> c) {
         int k = ts.length;
         while (k != 0) {
             k /= 2;
