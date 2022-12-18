@@ -10,19 +10,16 @@ public class ShellSort
     implements SortAlgorithm
 {
 
-    private <T> int[] getGapSequence(T[] ts) {
-        return new int[] { 5, 2, 1 };
-    }
-
     public <T> void sort(T[] ts, Comparator<T> c) {
-        int[] gapSequence = getGapSequence(ts);
-        for (int gap : gapSequence) {
+        int k = ts.length;
+        while (k != 0) {
+            k /= 2;
             int i_max = ts.length;
-            for (int i = gap; i < i_max; i++) {
+            for (int i = k; i < i_max; i++) {
                 T scratchT = ts[i];
                 int j = i;
-                for (j = i; (j >= gap) && (c.compare(ts[j - gap], scratchT) > 0); j -= gap) {
-                    ts[j] = ts[j - gap];
+                for (j = i; (j >= k) && (c.compare(ts[j - k], scratchT) > 0); j -= k) {
+                    ts[j] = ts[j - k];
                 }
                 ts[j] = scratchT;
             }
