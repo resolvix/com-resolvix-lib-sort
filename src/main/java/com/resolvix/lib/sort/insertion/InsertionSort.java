@@ -13,11 +13,10 @@ public class InsertionSort
     public <T> void sort(T[] ts, Comparator<? super T> c) {
         int i_max = ts.length;
         for (int i = 0; i < i_max; i++) {
-            int j = i;
-            while (j > 0 && c.compare(ts[j - 1], ts[j]) > 0) {
+            for (int j = i; j > 0 && c.compare(ts[j - 1], ts[j]) > 0; j--) {
                 T scratchT = ts[j];
                 ts[j] = ts[j - 1];
-                ts[--j] = scratchT;
+                ts[j - 1] = scratchT;
             }
         }
     }
