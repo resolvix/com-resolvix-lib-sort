@@ -13,6 +13,15 @@ algorithm is O(n<sup>2</sup>).
 The bubble sort algorithm is more particularly described in the paper: 
 [Bubble Sort: An Archealogical Algorithmic Analysis](https://users.cs.duke.edu/~ola/bubble/bubble.pdf).
 
+### Heapsort
+
+Provides a basic implementation of the heapsort algorithm. The worst-case and
+best-case performance of the algorithm are O(n log n) and O(n log n)
+respectively.
+
+The heapsort algorithm is more particularly described in the paper:
+[Algorithm 232 - Heapsort](https://doi.org/10.1145%2F512274.512284).
+
 ### Insertion sort
 
 Provides a basic implementation of the insertion sort algorithm. The worst-case
