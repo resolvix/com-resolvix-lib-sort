@@ -24,9 +24,20 @@ The insertion sort algorithm is more particularly described in the paper:
 
 ### Shellsort
 
-Provides a basic implementation of the Shellsort, a development of the bubble
-sort and insertion sort algorithms. The worst-case and best-case performance
-of the algorithm are O(n<sup>2</sup>) and O(n log<sup>2</sup> n) respectively.
+Provides a basic implementation of the Shellsort sorting algorithm, a
+development of the bubble sort and insertion sort algorithms. The worst-case
+and best-case performance of the algorithm are O(n<sup>2</sup>) and
+O(n log<sup>2</sup> n) respectively.
 
 The Shellsort algorithm is more particularly described in the paper:
 [A high-speed sorting procedure](https://dl.acm.org/doi/10.1145/368370.368387).
+
+### Quicksort
+
+Provides a basic implementation of the Quicksort algorithm using the Hoare
+partition scheme. The worst-case and best-case performance of the algorithm
+are O(n<sup>2</sup>) and O(n log n) respectively.
+
+The Quicksort algorithm is described in the paper:
+[Algorithm 64: Quicksort](https://dl.acm.org/doi/pdf/10.1145/366622.366644).
+
