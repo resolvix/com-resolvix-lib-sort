@@ -1,6 +1,5 @@
 package com.resolvix.lib.sort.insertion;
 
-import com.resolvix.lib.sort.shell.ShellSort;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
